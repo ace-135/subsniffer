@@ -1,6 +1,6 @@
 # SubSniffer
 
-![Rust](https://img.shields.io/badge/Rust-1.87-orange.svg)
+![Rust](https://img.shields.io/badge/Rust-1.88-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 SubSniffer is a command-line tool for enumerating subdomains of a specified domain using DNS resolution. It supports both IPv4 and IPv6 lookups with custom wordlists for brute-forcing. 
@@ -17,18 +17,18 @@ SubSniffer is a command-line tool for enumerating subdomains of a specified doma
 
 ## Installation
 
-### Option 1: Install via Debian Package (Kali Linux, amd64)
+### Option 1: Install via Debian Package (Debian or Kali Linux)
 
 1. Download the latest .deb package:
     
     ```bash
-    wget https://github.com/saurabh-857/subsniffer/releases/download/v0.1.0/subsniffer_0.1.0-1_amd64.deb
+    wget https://github.com/saurabh-857/subsniffer/releases/download/v0.2.0/subsniffer_0.2.0-1_amd64.deb
     ```
     
 2. Install the tool:
     
     ```bash
-    sudo dpkg -i subsniffer_0.1.0-1_amd64.deb
+    sudo dpkg -i subsniffer_0.2.0-1_amd64.deb
     ```
     
 3. Install missing dependencies:
@@ -38,9 +38,9 @@ SubSniffer is a command-line tool for enumerating subdomains of a specified doma
     ```
     
 
-### Option 2: Install via Cargo
+### Option 2: Install via Cargo (windows or other linux)
 
-Ensure you have installed latest version of [Rust](https://www.rust-lang.org/tools/install) (recommended 1.87.0).
+Ensure you have installed latest version of [Rust](https://www.rust-lang.org/tools/install) (recommended 1.88.0).
 
 1. Clone the repository:
     
@@ -82,9 +82,9 @@ Run `subsniffer -h` to display the help message:
 	subsniffer -d example.com -w wordlist.txt -o results.txt -v
 	```
 
-3. **Enumerate subdomains querying only IPv6 addresses**:
+3. **Enumerate subdomains querying only IPv6 addresses using dns-over-https**:
 	  ```bash
-	subsniffer -d example.com -w wordlist.txt -o results.txt -v 6
+	subsniffer -d example.com -w wordlist.txt -o results.txt --doh -v 6
 	```
 
 ## Uninstallation
@@ -111,7 +111,3 @@ Contributions are welcome! Please read our [CONTRIBUTING.md](./CONTRIBUTING.md) 
 
 This project is licensed under the MIT License. See the [LICENSE.md](./LICENSE.md) file for details.
 
-## Acknowledgments
-
-- Built with [Rust](https://www.rust-lang.org/)
-- Inspired by the need for a fast and simple subdomain enumeration tool
